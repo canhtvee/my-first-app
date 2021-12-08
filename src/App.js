@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <DisplayDataInSmallFont/>
-          <DisplayDataInLargeFont/>
+          <DisplayDataInSmallFont others="canh"/>
+          <DisplayDataInLargeFont others="canh"/>
       </header>
     </div>
   );

@@ -12,7 +12,7 @@ export default function displayData(DisplayComponent, getData) {
 
         render() {
             return(
-                <DisplayComponent text={this.state.data}/>
+                <DisplayComponent text={this.state.data} {...this.props}/>
             )
         }
     }
@@ -34,9 +34,9 @@ export {DisplayDataInSmallFont, DisplayDataInLargeFont}
 
 
 function SmallFontComponent(props) {
-    return <h4>{props.text}</h4>
+    return <h4>{props.text} {props.others}</h4>
 }
 
 function LargeFontComponent(props) {
-    return <h1>{props.text}</h1>
+    return <h1>{props.text} {props.others}</h1>
 }
