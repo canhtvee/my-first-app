@@ -6,7 +6,7 @@ export default function displayData(DisplayComponent, getData) {
         constructor(props) {
             super(props)
             this.state = {
-                data: getData(DataSource)
+                data: getData()
             }
         }
 
@@ -21,12 +21,12 @@ export default function displayData(DisplayComponent, getData) {
 
 const DisplayDataInSmallFont = displayData(
     SmallFontComponent, 
-    (DataSource) => new DataSource().getText()
+    () => new DataSource().getText()
 );
 
 const DisplayDataInLargeFont = displayData(
     LargeFontComponent, 
-    (DataSource) => new DataSource().getText()
+    () => new DataSource().getText()
 );
 
 export {DisplayDataInSmallFont, DisplayDataInLargeFont}
@@ -34,7 +34,7 @@ export {DisplayDataInSmallFont, DisplayDataInLargeFont}
 
 
 function SmallFontComponent(props) {
-    return <h4>{props.text} {props.others}</h4>
+    return <h4>{props.text} {props.name} {props.age}</h4>
 }
 
 function LargeFontComponent(props) {
